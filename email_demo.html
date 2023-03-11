@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>EMAIL VALIDATION DEMO</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<meta http-equiv="content-language" content="en-us"/>
+	<style>
+		body, input{font-size: 18px;}
+		#ui{
+			text-align: center;
+			padding-top: 20px;
+		}
+		#iri{width: 500px;}
+		.valid{color: #0a0;}
+		.invalid{
+			color: #f00;
+			background-color: #fdd;
+			border-left: 0.5em solid #f00;
+			padding-left: 1em;
+		}
+	</style>
+	<script type="text/javascript" src="libs/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="libs/validation.js"></script>
+	<script type="text/javascript" src="libs/iri.js"></script>
+	<script type="text/javascript" src="libs/iri.http.js"></script>
+	<script type="text/javascript" src="libs/iri.common.js"></script>
+	<script type="text/javascript" src="libs/email.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		initValidation(addrSpec);
+	});
+	</script>
+</head>
+<body>
+	<p>This page validates Email Addresses according to <a target="_blank" href="http://www.ietf.org/rfc/rfc2822">RFC 2822: Internet Message Format</a><br/><br/>
+	See also: <a href="iri_demo.html">IRIs</a>, <a href="http_demo.html">HTTP URLs</a>, <a href="common_demo.html">Common URLs</a></p>
+	<div id="ui">
+		<input type="text" name="iri" id="iri" value="welcome@hello.com"/>
+		<input type="button" name="validate" id="validate" value="Validate"/>
+		<input type="button" name="reload" id="reload" value="Reload" onclick="window.location.href='email_demo.html';"/>
+	</div><br/>
+	<div id="results"></div>
+</body>
+</html>
